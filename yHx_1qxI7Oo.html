@@ -59,7 +59,7 @@
   <p class="hint" id="hint">Pritisni na darilo, če te zanima, koga letos obdaruješ!</p>
 
 <script>
-  const DATA = "26x5kJzBaexnXy0twNX1w+OEM1ZlA19a29mdk3AOiw74Ykn3QA7J9a7wRHwvih1EODMT3YgYS25N7nK/gLBACgoLOQ==";
+  const DATA = "81joCg4ZngjRf27hsxScllPslUdp3r/cMcx4qXbUmE0syIr9ArB2VAJdAPs2+GSaniWfaaYAEJF6Qjs12XMfjApnAw==";
   const b64 = s => Uint8Array.from(
     atob(s.replace(/-/g, "+").replace(/_/g, "/")), c => c.charCodeAt(0));
 
@@ -72,7 +72,7 @@
         { name: "AES-GCM", iv: raw.slice(0, 12) }, key, raw.slice(12));
       const info = JSON.parse(new TextDecoder().decode(plain));
       document.getElementById("greeting").textContent = "Živjo " + info.giver + "!";
-      document.getElementById("to").textContent = dragi + info.giver + ",";
+      document.getElementById("to").textContent = "dragi" + info.giver + ",";
       document.getElementById("receiver").textContent = info.receiver;
     } catch (e) {
       console.error(e);
