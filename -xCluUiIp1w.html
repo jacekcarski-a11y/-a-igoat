@@ -59,7 +59,7 @@
   <p class="hint" id="hint">Pritisni na darilo, če te zanima, koga letos obdaruješ!</p>
 
 <script>
-  const DATA = "tZNaKrye+b8GMk4qCr0PrawhrYUe5SV+tG8pLRX9cdqpGr9Rl6K3YyMywO45j+mZ2rmdto0jMQOj5vbIEx1i6l5foQ==";
+  const DATA = "UwsrAep+IuJ5iM1EdownAjmWMHSEPDyC0w/5Z8gI4QwT8WQRZVV+bXx/i8ANAMQYacCHkPe1IlxxOqa67ccuLCHVjw==";
   const b64 = s => Uint8Array.from(
     atob(s.replace(/-/g, "+").replace(/_/g, "/")), c => c.charCodeAt(0));
 
@@ -75,6 +75,8 @@
       document.getElementById("to").textContent = dragi + info.giver + ",";
       document.getElementById("receiver").textContent = info.receiver;
     } catch (e) {
+      console.error(e);
+      document.getElementById("greeting").textContent = e.name + ": " + e.message;
       document.getElementById("greeting").textContent =
         "This link is incomplete. Please use the full link from your email." + key;
       document.getElementById("scene").style.display = "none";
